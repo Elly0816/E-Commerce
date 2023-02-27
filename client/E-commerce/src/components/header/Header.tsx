@@ -159,7 +159,7 @@ export default function PrimarySearchAppBar() {
   );
 
   type Pages =  {
-    text: String;
+    text: String,
     link: String
   }
 
