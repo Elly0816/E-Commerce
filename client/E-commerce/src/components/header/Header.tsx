@@ -9,15 +9,22 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button } from '@mui/material';
+import { Pages } from './headerInterfaces';
 
-const Search = styled('div')(({ theme }) => ({
+
+const pages: Pages[] = [{text: "Deals", link: "/"},
+ {text: "New!", link: "/"},
+  {text: "Delivery", link: "/"}];
+
+
+  const Search = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row-reverse',
   position: 'relative',
@@ -158,14 +165,6 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
-  type Pages =  {
-    text: String,
-    link: String
-  }
-
-  const pages: Pages[] = [{text: "Deals", link: "/"},
-   {text: "New!", link: "/"},
-    {text: "Delivery", link: "/"}];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -210,12 +209,13 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
+            <IconButton size="large" aria-label="Cart" color="inherit">
+                {/* Set the number on the badge of the cart icon */}
+              <Badge badgeContent={4} color="error"> 
+                <ShoppingCartIcon/>
               </Badge>
             </IconButton>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
@@ -223,7 +223,7 @@ export default function PrimarySearchAppBar() {
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </IconButton> */}
             <IconButton
               size="large"
               edge="end"
