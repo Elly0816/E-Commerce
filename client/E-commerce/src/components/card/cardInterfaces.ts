@@ -11,5 +11,7 @@ export interface CardStyling  {
 
 export interface CardProps {
     features: Description,
-    styling: CardStyling
+    styling: CardStyling,
+    type: 'product' | 'categories' | 'brand',
+    description?: string
 }

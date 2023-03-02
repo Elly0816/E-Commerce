@@ -13,8 +13,9 @@ export default function Categories({features}:CatProps) {
 
 
   return (<section className='categories'>
-    {features.map(({title, image}) => {
-        return (<MyCard features={{title, image}} styling={cardStyle}/>
+    {features.map(({title, image}, index) => {
+        return (<MyCard features={{title, image}} styling={cardStyle} type="product"
+        key={index}/>
         
 )
         })}

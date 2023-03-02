@@ -1,0 +1,22 @@
+.display {
+    height: fit-content;
+    margin: 0;
+}
+
+.display button {
+    position: relative;
+    right: 70%;
+    height: 50px;
+    border-radius: 50px;
+    width: 150px;
+    font-size: large;
+    bottom: 50px;
+    /* color: aqua; */
+    font-weight: bold;
+}
+
+.display button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}

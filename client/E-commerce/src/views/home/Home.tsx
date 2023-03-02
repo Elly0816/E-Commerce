@@ -1,6 +1,8 @@
 import Header from "../../components/header/Header";
 import Categories from "../../components/categories/Categories";
 import { Description } from "../../components/card/cardInterfaces";
+import Display from "../../components/display/Display";
+// import "./Home.css"
 
 
 export default function Home(){
@@ -15,8 +17,9 @@ export default function Home(){
                                 ]
 
 
-    return <div>
+    return <div className="home">
         <Header/>
+        <Display/>
         <Categories features={featured}/>
     </div>
 }

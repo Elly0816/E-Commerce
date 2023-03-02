@@ -1,5 +1,6 @@
 .categories {
     display: flex;
     justify-content: space-evenly;
-    width: 100vw;
+    text-align: center;
+    padding-top: 5%;
 }

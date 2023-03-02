@@ -12,19 +12,16 @@ import Menu from '@mui/material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button } from '@mui/material';
 import { Pages } from './headerInterfaces';
 
 
 const pages: Pages[] = [{text: "Deals", link: "/"},
- {text: "New!", link: "/"},
-  {text: "Delivery", link: "/"}];
+    {text: "New!", link: "/"},
+    {text: "Delivery", link: "/"}];
 
-
-  const Search = styled('div')(({ theme }) => ({
+const Search = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row-reverse',
   position: 'relative',
@@ -96,17 +93,17 @@ export default function PrimarySearchAppBar() {
     <Menu
       anchorEl={anchorEl}
       anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'left',
+    }}
+    id={menuId}
+    keepMounted
+    transformOrigin={{
         vertical: 'top',
         horizontal: 'right',
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
+    }}
+    open={isMenuOpen}
+    onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
@@ -115,40 +112,33 @@ export default function PrimarySearchAppBar() {
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
-    <Menu
+      <Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        id={mobileMenuId}
+        keepMounted
+        transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+        }}
+        open={isMobileMenuOpen}
+        onClose={handleMobileMenuClose}
+        >
+
       <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
-        >
+          >
           <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
+            <ShoppingCartIcon />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Cart</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -157,101 +147,96 @@ export default function PrimarySearchAppBar() {
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
-        >
+          >
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
       </MenuItem>
     </Menu>
-  );
+  );    
 
-
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="absolute">
-        <Toolbar>
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }}}
-          >
-            E-Commerce
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, paddingLeft: {md: '20px'} }}>
-            {pages.map((page) => (
-              <Button
-                key={pages.indexOf(page)}
-                // onClick={}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page.text}
-              </Button>
-            ))}
-          </Box>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search Product"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="Cart" color="inherit">
-                {/* Set the number on the badge of the cart icon */}
-              <Badge badgeContent={4} color="error"> 
-                <ShoppingCartIcon/>
-              </Badge>
-            </IconButton>
-            {/* <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton> */}
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </Box>
+    return (
+                <Box sx={{ flexGrow: 1}}>
+            <AppBar position="relative">
+                <Toolbar>
+                {/* <IconButton
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    aria-label="open drawer"
+                    sx={{ mr: 2 }}
+                >
+                    <MenuIcon />
+                </IconButton> */}
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component="div"
+                    sx={{ display: { xs: 'none', sm: 'block' }}}
+                >
+                    E-Commerce
+                </Typography>
+                <Box sx={{flexGrow: 1,
+                            display: { xs: 'none', md: 'flex' },
+                            paddingLeft: {md: '20px'}}}>
+                    {pages.map((page, index) => (
+                    <Button
+                        key={index}
+                        // onClick={}
+                        sx={{ my: 2, color: 'white', display: 'block' }}
+                    >
+                        {page.text}
+                    </Button>
+                    ))}
+                </Box>
+                <Search>
+                    <SearchIconWrapper>
+                    <SearchIcon />
+                    </SearchIconWrapper>
+                    <StyledInputBase
+                    placeholder="Search Product"
+                    inputProps={{ 'aria-label': 'search' }}
+                    />
+                </Search>
+                <Box sx={{ flexGrow: 1 }} />
+                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                    <IconButton
+                    size="large"
+                    aria-label="show 17 new notifications"
+                    color="inherit"
+                    >
+                    <Badge badgeContent={17} color="error">
+                        <ShoppingCartIcon />
+                    </Badge>
+                    </IconButton>
+                    <IconButton
+                    size="large"
+                    edge="end"
+                    aria-label="account of current user"
+                    aria-controls={menuId}
+                    aria-haspopup="true"
+                    onClick={handleProfileMenuOpen}
+                    color="inherit"
+                    >
+                    <AccountCircle />
+                    </IconButton>
+                </Box>
+                <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                    <IconButton
+                    size="large"
+                    aria-label="show more"
+                    aria-controls={mobileMenuId}
+                    aria-haspopup="true"
+                    onClick={handleMobileMenuOpen}
+                    color="inherit"
+                    >
+                    <MoreIcon />
+                    </IconButton>
+                </Box>
+                </Toolbar>
+            </AppBar>
+            {renderMobileMenu}
+            {renderMenu}
+            </Box>    
   );
 }
