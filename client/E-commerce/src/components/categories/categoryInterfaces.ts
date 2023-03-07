@@ -1,4 +1,4 @@
-import { Description } from "./card/cardInterfaces";
+import { Description } from "../cards/catCardInterfaces";
 
 
 //interface for categories props

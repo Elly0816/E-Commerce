@@ -22,3 +22,14 @@
     color: white;
     background-color: black;
 }
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dealCards {
+    display: flex;
+    justify-content: space-between;
+}

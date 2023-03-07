@@ -1,5 +1,5 @@
-import { Description, CardProps, CardStyling } from "../categories/card/cardInterfaces";
-import { dealDescription } from "./card/cardInterfaces";
+import { Description, CardProps } from "../cards/catCardInterfaces";
+import { dealDescription } from "../cards/dealCardInterfaces";
 
 
 

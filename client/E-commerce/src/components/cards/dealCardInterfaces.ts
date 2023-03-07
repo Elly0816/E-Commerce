@@ -1,4 +1,4 @@
-import { CardProps, Description } from "../../categories/card/cardInterfaces"
+import { CardProps, Description } from "./catCardInterfaces"
 
 export interface dealDescription extends Description{
     price: string,

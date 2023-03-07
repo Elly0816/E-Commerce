@@ -1,4 +1,4 @@
-import MyCard from './card/Card';
+import MyCard from '../cards/catCard';
 import { CatProps } from './categoryInterfaces';
 import './Categories.css';
 

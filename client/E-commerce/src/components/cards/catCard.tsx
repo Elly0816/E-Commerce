@@ -2,13 +2,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-import { CardProps } from './cardInterfaces';
+import { CardProps } from './catCardInterfaces';
 import {SxProps, Theme} from '@mui/material';
 
 const cardStyling: SxProps<Theme> = {
     minWidth: 200,
-    margin: '5%'
+    margin: '2%',
 }
 
 const mediaStyling: SxProps<Theme> = {
@@ -16,11 +15,10 @@ const mediaStyling: SxProps<Theme> = {
 }
 
 const typoStyling: SxProps<Theme> = {
-    fontWeight: "Bolder",
+    fontWeight: "Bold",
     color: 'white',
-    position: 'relative',
-    right: 70,
-    bottom: 10
+    padding: 0,
+    textAlign: 'left'
 }
 
 const typoText = (title: string) => {
@@ -32,22 +30,15 @@ const typoText = (title: string) => {
 }
 
 
-export default function MyCard({features, type}: CardProps){
+export default function catCard({features, type}: CardProps){
 
     return (<Card 
     sx={cardStyling}>
-    <CardActionArea>
         <CardMedia
             sx={mediaStyling}
             image={features.image}
             title={features.title}
             children={typoText(features.title)}
         />
-        {/* <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-            {features.title}
-            </Typography>
-        </CardContent> */}
-        </CardActionArea>
     </Card>)
 }

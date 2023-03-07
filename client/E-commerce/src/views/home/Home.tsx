@@ -1,9 +1,9 @@
 import Header from "../../components/header/Header";
 import Categories from "../../components/categories/Categories";
-import { Description } from "../../components/categories/card/cardInterfaces";
+import { Description } from "../../components/cards/catCardInterfaces";
 import Display from "../../components/display/Display";
 import { displayProps } from "../../components/display/displayInterfaces";
-import { dealDescription } from "../../components/deals/card/cardInterfaces";
+import { dealDescription } from "../../components/cards/dealCardInterfaces";
 import Deals from "../../components/deals/Deals";
 // import "./Home.css"
 
@@ -21,12 +21,12 @@ this array of pages to the categories
 const featured: Description[] = [
                                 {title: "Cat", image: "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=pexels-pixabay-45201.jpg&fm=jpg"},
                                 {title: "Dog", image: "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*"},
-                                {title: "Mouse", image: "mouse"}
+                                {title: "Mouse", image: "https://a-z-animals.com/media/2019/11/Mouse-in-wood-768x401.jpg"}
                             ]
 
 
 const deals: dealDescription[] = [{title: "HomePod mini",
-image: "",
+image: "https://m.media-amazon.com/images/I/61CGHv6kmWL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
 price: "239.00",
 subtitle: "Table with air purifier, stained veneer/black"}]; 
 
