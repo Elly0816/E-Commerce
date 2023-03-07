@@ -5,6 +5,8 @@ import Display from "../../components/display/Display";
 import { displayProps } from "../../components/display/displayInterfaces";
 import { dealDescription } from "../../components/cards/dealCardInterfaces";
 import Deals from "../../components/deals/Deals";
+import Brand from "../../components/brand/Brand";
+import { brandDescription } from "../../components/cards/brandCardInterface";
 // import "./Home.css"
 
 const firstDisplay: displayProps = {
@@ -31,6 +33,11 @@ price: "239.00",
 subtitle: "Table with air purifier, stained veneer/black"}]; 
 
 
+const brands: brandDescription[] = [
+    {title: "Staples", image: "https://logos-world.net/wp-content/uploads/2021/10/Staples-Logo.png", subtitle:"Delivery Within 24 hours"}
+];
+
+
 export default function Home(){
 
 
@@ -44,5 +51,6 @@ export default function Home(){
         h4={firstDisplay.h4}/>
         <Categories features={featured}/>
         <Deals features={deals}/>
+        <Brand features={brands}/>
     </div>
 }
