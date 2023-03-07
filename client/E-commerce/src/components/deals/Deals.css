@@ -1,0 +1,24 @@
+/* .deals h2 {
+    margin: 2% 9%;
+} */
+
+.deals {
+    padding: 2% 5%;
+}
+
+.deals button {
+    left: 10%;
+    height: 40px;
+    border-radius: 50px;
+    width: 120px;
+    /* font-size: small; */
+    bottom: 5%;
+    /* color: aqua; */
+    font-weight: bold;
+}
+
+.deals button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}

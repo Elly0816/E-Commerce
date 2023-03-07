@@ -30,7 +30,7 @@
 
 .display1 .banner {
     position: absolute;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     left: 5%;
     top: 10%;
     font-size: large;

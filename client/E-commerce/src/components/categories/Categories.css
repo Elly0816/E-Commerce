@@ -1,6 +1,10 @@
-.categories {
+.catCards {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    padding-top: 5%;
+    padding: 5%;
+}
+
+.categories {
+    padding: 2% 5%;
 }

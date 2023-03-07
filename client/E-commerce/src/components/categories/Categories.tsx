@@ -1,11 +1,7 @@
-import MyCard from '../card/Card';
-import { CatProps, CatStyling } from './categoryInterfaces';
+import MyCard from './card/Card';
+import { CatProps } from './categoryInterfaces';
 import './Categories.css';
 
-const cardStyle: CatStyling = {
-    cardWidth: 200,
-    mediaHeight: 150
-}
 
 
 export default function Categories({features}:CatProps) {
@@ -13,12 +9,15 @@ export default function Categories({features}:CatProps) {
 
 
   return (<section className='categories'>
-    {features.map(({title, image}, index) => {
-        return (<MyCard features={{title, image}} styling={cardStyle} type="product"
-        key={index}/>
-        
-)
-        })}
+    <h2>Shop Our Top Categories</h2>
+    <section className='catCards'>  
+      {features.map(({title, image}, index) => {
+          return (<MyCard features={{title, image}} type="categories"
+          key={index}/>
+          
+  )
+          })}
+    </section>
   </section>
   );
 }
