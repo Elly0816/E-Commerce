@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '../button/Button';
 import { SxProps, Theme } from '@mui/material';
-import { ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 
 
@@ -56,7 +56,7 @@ function showPrice(title: string, price: string, showPriceClass: string){
 }
 
 
-export default function DealCard({features, type}:dealCardProps) {
+export default function DealCard({features, type}:dealCardProps): ReactElement<dealCardProps> {
 
     const {title, image, price, subtitle}:dealDescription = features;
 

@@ -1,0 +1,42 @@
+.footer {
+    display: flex;
+    padding: 2%;
+    flex-wrap: wrap;
+    color: black;
+    justify-content: space-between;
+}
+
+.footer .div1,
+.div2,
+.div3,
+.div4,
+.div5 {
+    margin: 1% 5%;
+}
+
+.footer-brand {
+    max-width: 50%;
+}
+
+.departments {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+.footer a {
+    margin-bottom: 5%;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease-in-out;
+    font-size: medium;
+}
+
+.footer a:hover {
+    color: red;
+    transform: translateX(10px);
+}
+
+hr {
+    width: 80%;
+}

@@ -1,11 +1,12 @@
 import { dealProps} from "./dealsInterfaces";
 import DealCard from "../cards/dealCard";
 import "./Deals.css";
+import { ReactElement } from "react";
 
 
 
 
-export default function Deals({features}: dealProps){
+export default function Deals({features}: dealProps): ReactElement<dealProps>{
 
     return <section className="deals">
         <h2>Today's Best Deals For You!</h2>

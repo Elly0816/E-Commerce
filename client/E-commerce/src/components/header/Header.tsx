@@ -1,4 +1,4 @@
-import {MouseEvent, useState} from 'react';
+import {MouseEvent, ReactElement, useState} from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -13,7 +13,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Button } from '@mui/material';
+import { Button, SxProps, Theme } from '@mui/material';
 import { Pages } from './headerInterfaces';
 
 
@@ -63,7 +63,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+const appBar: SxProps<Theme> = {
+  backgroundColor: "white",
+  color: "black"
+}
+
+const inputStyle: SxProps<Theme> = {
+  backgroundColor: "#c5c6d0",
+  borderRadius: "50px"
+}
+
+export default function PrimarySearchAppBar(): ReactElement {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     useState<null | HTMLElement>(null);
@@ -157,17 +167,8 @@ export default function PrimarySearchAppBar() {
 
     return (
                 <Box sx={{ flexGrow: 1}}>
-            <AppBar position="relative">
+            <AppBar sx={appBar} position="relative">
                 <Toolbar>
-                {/* <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    sx={{ mr: 2 }}
-                >
-                    <MenuIcon />
-                </IconButton> */}
                 <Typography
                     variant="h6"
                     noWrap
@@ -182,8 +183,7 @@ export default function PrimarySearchAppBar() {
                     {pages.map((page, index) => (
                     <Button
                         key={index}
-                        // onClick={}
-                        sx={{ my: 2, color: 'white', display: 'block' }}
+                        sx={{ my: 2, color: 'black', display: 'block' }}
                     >
                         {page.text}
                     </Button>
@@ -191,9 +191,10 @@ export default function PrimarySearchAppBar() {
                 </Box>
                 <Search>
                     <SearchIconWrapper>
-                    <SearchIcon />
+                    <SearchIcon sx={{zIndex: 1}}/>
                     </SearchIconWrapper>
                     <StyledInputBase
+                    sx={inputStyle}
                     placeholder="Search Product"
                     inputProps={{ 'aria-label': 'search' }}
                     />

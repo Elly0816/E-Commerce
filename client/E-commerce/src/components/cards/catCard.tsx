@@ -4,6 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardProps } from './catCardInterfaces';
 import {SxProps, Theme} from '@mui/material';
+import { ReactElement } from 'react';
 
 const cardStyling: SxProps<Theme> = {
     minWidth: 200,
@@ -34,7 +35,7 @@ const typoText = (title: string) => {
 }
 
 
-export default function catCard({features, type}: CardProps){
+export default function catCard({features, type}: CardProps): ReactElement<CardProps>{
 
     return (<Card 
     sx={cardStyling}>

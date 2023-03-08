@@ -7,6 +7,8 @@ import { dealDescription } from "../../components/cards/dealCardInterfaces";
 import Deals from "../../components/deals/Deals";
 import Brand from "../../components/brand/Brand";
 import { brandDescription } from "../../components/cards/brandCardInterface";
+import { ReactElement } from "react";
+import Footer from "../../components/footer/Footer";
 // import "./Home.css"
 
 const firstDisplay: displayProps = {
@@ -34,11 +36,17 @@ subtitle: "Table with air purifier, stained veneer/black"}];
 
 
 const brands: brandDescription[] = [
-    {title: "Staples", image: "https://logos-world.net/wp-content/uploads/2021/10/Staples-Logo.png", subtitle:"Delivery Within 24 hours"}
+    {title: "Staples", image: "https://logos-world.net/wp-content/uploads/2021/10/Staples-Logo.png", subtitle:"Delivery Within 24 hours"},
+    {title: "Staples", image: "https://logos-world.net/wp-content/uploads/2021/10/Staples-Logo.png", subtitle:"Delivery Within 24 hours"},
+    {title: "Staples", image: "https://logos-world.net/wp-content/uploads/2021/10/Staples-Logo.png", subtitle:"Delivery Within 24 hours"},
+    {title: "Staples", image: "https://logos-world.net/wp-content/uploads/2021/10/Staples-Logo.png", subtitle:"Delivery Within 24 hours"},
+    {title: "Staples", image: "https://logos-world.net/wp-content/uploads/2021/10/Staples-Logo.png", subtitle:"Delivery Within 24 hours"},
+    {title: "Staples", image: "https://logos-world.net/wp-content/uploads/2021/10/Staples-Logo.png", subtitle:"Delivery Within 24 hours"},
+    {title: "Staples", image: "https://logos-world.net/wp-content/uploads/2021/10/Staples-Logo.png", subtitle:"Delivery Within 24 hours"},
 ];
 
 
-export default function Home(){
+export default function Home(): ReactElement{
 
 
 
@@ -52,5 +60,6 @@ export default function Home(){
         <Categories features={featured}/>
         <Deals features={deals}/>
         <Brand features={brands}/>
+        <Footer/>
     </div>
 }

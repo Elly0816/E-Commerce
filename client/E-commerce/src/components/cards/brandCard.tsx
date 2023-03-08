@@ -5,6 +5,7 @@ import { brandDescription } from './brandCardInterface';
 import { brandCardProps } from './brandCardInterface';
 import { Theme } from '@emotion/react';
 import { SxProps, Typography } from '@mui/material';
+import { ReactElement } from 'react';
 
 
 const mediaStyle: SxProps<Theme> = {
@@ -12,27 +13,35 @@ const mediaStyle: SxProps<Theme> = {
   backgroundSize: 'contain',
   borderRadius: "50%",
   // border: "1px solid red",
-  backgroundColor: "white"
+  backgroundColor: "white",
+  transition: "transform 0.2s ease-in-out",
+  ":hover": {
+      transform: "scale(1.2)",
+  }
 };
 
 const cardStyle: SxProps<Theme> = {
-  padding: "1%",
-  margin: "1%",
+  padding: "0.5%",
+  margin: "0.5%",
   width: 400,
   height: 90,
   backgroundColor: "lightgray",
   borderRadius: "10px",
   ":hover": {
-    border: "1px solid black"
+    border: "1px solid black",
+    cursor: "pointer"
   },
   display: "flex"
 };
 
 const contentStyle: SxProps<Theme> = {
+  ":hover": {
+    cursor: "text"
+  }
 }
 
 
-export default function BrandCard({features, type} : brandCardProps) {
+export default function BrandCard({features, type} : brandCardProps): ReactElement<brandCardProps> {
 
     const {title, image, subtitle} : brandDescription = features;
 

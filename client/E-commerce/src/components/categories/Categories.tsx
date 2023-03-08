@@ -1,10 +1,11 @@
 import MyCard from '../cards/catCard';
 import { CatProps } from './categoryInterfaces';
 import './Categories.css';
+import { ReactElement } from 'react';
 
 
 
-export default function Categories({features}:CatProps) {
+export default function Categories({features}:CatProps): ReactElement<CatProps> {
 
 
 
